@@ -3,220 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Natural Hair & Spa "Forest" | 予約サイト</title>
+    <title>隠れ家エステサロン solana（ソラナ） | 陽だまりのような美肌空間</title>
+    <meta name="description" content="美容師歴15年。ママもこどもも気軽に立ち寄れる、陽だまりのような隠れ家エステサロン solana（ソラナ）。話題のムートンホイップスパ・リッチホイップスパで、毛穴・くすみ・ハリにアプローチ。">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --solana-pink: #f3a9b4;
+            --solana-rose: #e88497;
+            --solana-cream: #fdf6f0;
+            --solana-beige: #f5e9dc;
+            --solana-gold: #c9a96a;
+            --solana-ink: #5b4848;
+        }
         body {
             font-family: 'Zen Maru Gothic', sans-serif;
-            background-color: #fcfaf2; /* 柔らかな生成り色 */
+            background: var(--solana-cream);
+            color: var(--solana-ink);
         }
-        .rounded-theme {
-            font-family: 'M PLUS Rounded 1c', sans-serif;
+        .font-mincho { font-family: 'Shippori Mincho', serif; }
+        .bg-pink { background-color: var(--solana-pink); }
+        .bg-rose { background-color: var(--solana-rose); }
+        .bg-cream { background-color: var(--solana-cream); }
+        .bg-beige { background-color: var(--solana-beige); }
+        .text-pink { color: var(--solana-pink); }
+        .text-rose { color: var(--solana-rose); }
+        .text-gold { color: var(--solana-gold); }
+        .text-ink { color: var(--solana-ink); }
+        .border-gold { border-color: var(--solana-gold); }
+
+        /* 陽だまりグラデーション */
+        .hero-glow {
+            background:
+                radial-gradient(ellipse at 20% 20%, rgba(255, 220, 200, 0.9), transparent 50%),
+                radial-gradient(ellipse at 80% 30%, rgba(243, 169, 180, 0.5), transparent 50%),
+                radial-gradient(ellipse at 50% 90%, rgba(253, 246, 240, 1), transparent 60%),
+                linear-gradient(135deg, #fff5ee 0%, #fde1e6 50%, #fdf6f0 100%);
         }
-        .bg-botanical {
-            background-color: #7d8e7b; /* 落ち着いたセージグリーン */
+        .bokeh::before {
+            content: '';
+            position: absolute; inset: 0;
+            background-image:
+                radial-gradient(circle at 10% 20%, rgba(255,255,255,.7) 0, transparent 2px),
+                radial-gradient(circle at 80% 30%, rgba(255,255,255,.6) 0, transparent 3px),
+                radial-gradient(circle at 30% 70%, rgba(255,255,255,.5) 0, transparent 2px),
+                radial-gradient(circle at 60% 80%, rgba(255,255,255,.6) 0, transparent 4px),
+                radial-gradient(circle at 90% 60%, rgba(255,255,255,.4) 0, transparent 3px),
+                radial-gradient(circle at 15% 90%, rgba(255,255,255,.5) 0, transparent 2px);
+            pointer-events: none;
         }
-        .text-botanical {
-            color: #5d6d5b;
+        /* 泡アニメ */
+        @keyframes float {
+            0%,100% { transform: translateY(0) scale(1); opacity: .7; }
+            50% { transform: translateY(-20px) scale(1.05); opacity: 1; }
         }
-        .hero-pattern {
-            background: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)), 
-                        url('https://images.unsplash.com/photo-1590439471364-192aa70c0b53?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-            background-size: cover;
-            background-position: center;
+        .bubble { animation: float 6s ease-in-out infinite; }
+        .bubble:nth-child(2) { animation-delay: 1s; animation-duration: 7s; }
+        .bubble:nth-child(3) { animation-delay: 2s; animation-duration: 5s; }
+        .bubble:nth-child(4) { animation-delay: 3s; animation-duration: 8s; }
+
+        .leaf-corner {
+            background-image: radial-gradient(circle at top right, rgba(201,169,106,.15), transparent 30%),
+                              radial-gradient(circle at bottom left, rgba(201,169,106,.12), transparent 30%);
+        }
+        .card-soft { box-shadow: 0 20px 40px -20px rgba(232, 132, 151, .25); }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--solana-pink), var(--solana-rose));
+            box-shadow: 0 10px 25px -10px rgba(232, 132, 151, .6);
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -10px rgba(232, 132, 151, .8); }
+        .divider-flower {
+            display: flex; align-items: center; gap: 1rem;
+            color: var(--solana-gold);
+        }
+        .divider-flower::before, .divider-flower::after {
+            content: ''; flex: 1; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--solana-gold), transparent);
         }
     </style>
 </head>
-<body class="text-stone-700">
+<body>
 
     <!-- Header -->
-    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <div class="w-8 h-8 bg-botanical rounded-full flex items-center justify-center">
-                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+    <header class="sticky top-0 z-50 bg-cream/85 backdrop-blur-md border-b border-rose/10">
+        <div class="max-w-6xl mx-auto px-5 h-16 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2">
+                <span class="w-9 h-9 rounded-full bg-pink/20 flex items-center justify-center text-rose text-lg">☀</span>
+                <div>
+                    <div class="font-mincho text-lg leading-none text-ink tracking-wide">solana</div>
+                    <div class="text-[10px] tracking-[0.3em] text-gold leading-none mt-0.5">SOLANA</div>
                 </div>
-                <h1 class="text-xl font-bold rounded-theme tracking-tighter text-botanical">Forest Hair & Spa</h1>
-            </div>
-            <nav class="hidden md:flex space-x-8 text-sm font-bold">
-                <a href="#concept" class="hover:text-botanical transition">コンセプト</a>
-                <a href="#menu" class="hover:text-botanical transition">メニュー</a>
-                <a href="#gallery" class="hover:text-botanical transition">スタイル</a>
-                <a href="#booking" class="bg-botanical text-white px-6 py-2 rounded-full hover:opacity-90 transition shadow-sm">ご予約はこちら</a>
+            </a>
+            <nav class="hidden md:flex items-center space-x-7 text-sm font-bold text-ink/80">
+                <a href="#concept" class="hover:text-rose transition">コンセプト</a>
+                <a href="#menu" class="hover:text-rose transition">メニュー</a>
+                <a href="#about" class="hover:text-rose transition">オーナー</a>
+                <a href="#booking" class="bg-rose text-white px-5 py-2 rounded-full hover:opacity-90 transition shadow">ご予約</a>
             </nav>
+            <a href="#booking" class="md:hidden text-xs bg-rose text-white px-4 py-2 rounded-full font-bold">予約</a>
         </div>
     </header>
 
     <!-- Hero -->
-    <section class="hero-pattern min-h-[80vh] flex items-center justify-center relative overflow-hidden">
-        <div class="text-center px-6">
-            <div class="inline-block bg-white/80 px-4 py-1 rounded-full text-xs font-bold text-botanical mb-6 tracking-widest">NATURAL & ORGANIC</div>
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight rounded-theme">
-                髪と心に、<br><span class="text-botanical">深呼吸</span>を。
-            </h2>
-            <p class="text-stone-600 mb-10 max-w-md mx-auto leading-relaxed">
-                厳選された植物由来の成分で、<br>
-                あなた本来の美しさを引き出すプライベートサロン。
+    <section class="hero-glow relative overflow-hidden">
+        <div class="bokeh"></div>
+        <!-- Floating bubbles -->
+        <div class="absolute top-20 left-10 w-16 h-16 rounded-full bg-white/40 blur-sm bubble"></div>
+        <div class="absolute top-40 right-16 w-24 h-24 rounded-full bg-pink/30 blur-sm bubble"></div>
+        <div class="absolute bottom-32 left-1/4 w-20 h-20 rounded-full bg-white/50 blur-sm bubble"></div>
+        <div class="absolute bottom-20 right-1/3 w-12 h-12 rounded-full bg-pink/40 blur-sm bubble"></div>
+
+        <div class="relative max-w-5xl mx-auto px-6 py-24 md:py-32 text-center">
+            <p class="text-xs tracking-[0.4em] text-gold mb-6">— 隠れ家エステサロン —</p>
+            <h1 class="font-mincho text-5xl md:text-7xl text-ink mb-4">solana</h1>
+            <p class="text-rose tracking-widest text-sm mb-10">陽 だ ま り の よ う な、私 だ け の 時 間</p>
+            <p class="text-ink/70 leading-loose max-w-xl mx-auto mb-10">
+                ふらっと寄り道できる、ココロ落ち着く隠れ家。<br class="hidden md:block">
+                話題の<span class="text-rose font-bold">ムートンホイップスパ</span>の泡に包まれて、<br class="hidden md:block">
+                毛穴の奥から、透明感とハリのある肌へ。
             </p>
-            <a href="#booking" class="bg-amber-100 border-2 border-botanical text-botanical font-bold px-12 py-4 rounded-full text-lg hover:bg-botanical hover:text-white transition duration-300 inline-block">
-                今すぐ予約する
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#booking" class="btn-primary text-white font-bold px-10 py-4 rounded-full transition inline-block">
+                    🌸 ご予約・お問い合わせ
+                </a>
+                <a href="#menu" class="bg-white/80 text-ink font-bold px-10 py-4 rounded-full border border-rose/30 hover:bg-white transition inline-block">
+                    メニューを見る
+                </a>
+            </div>
+            <p class="text-xs text-ink/50 mt-6">※ 完全予約制 / プライベート空間</p>
+        </div>
+    </section>
+
+    <!-- お悩み Section -->
+    <section class="py-20 bg-cream">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <p class="divider-flower font-mincho text-sm tracking-widest mb-10"><span>こんなお悩み、ありませんか？</span></p>
+            <div class="space-y-4 text-left md:text-center">
+                <div class="bg-white/70 rounded-2xl p-5 card-soft">
+                    <p class="text-rose font-bold">「最近、肌のくすみが気になる…」</p>
+                </div>
+                <div class="bg-white/70 rounded-2xl p-5 card-soft">
+                    <p class="text-rose font-bold">「スキンケアを頑張ってるのに、浸透してない気がする…」</p>
+                </div>
+                <div class="bg-white/70 rounded-2xl p-5 card-soft">
+                    <p class="text-rose font-bold">「毛穴汚れを落として、透明感とハリを取り戻したい」</p>
+                </div>
+            </div>
+            <p class="mt-10 text-ink/70 leading-loose">
+                それは、古い角質や毛穴の汚れが<br>
+                肌の表面に溜まっているからかもしれません。<br>
+                <span class="text-rose font-bold">solanaの極上の泡</span>が、
+                あなたの素肌を呼び覚まします。✨
+            </p>
         </div>
     </section>
 
     <!-- Concept -->
-    <section id="concept" class="py-24 max-w-5xl mx-auto px-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div class="rounded-2xl overflow-hidden shadow-2xl rotate-2">
-                <img src="https://images.unsplash.com/photo-1527799822340-474058a67bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Concept Image" class="w-full h-auto">
-            </div>
+    <section id="concept" class="py-24 bg-beige/40 leaf-corner relative">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
             <div>
-                <span class="text-botanical font-bold text-sm">CONCEPT</span>
-                <h3 class="text-3xl font-bold mt-4 mb-6 rounded-theme">森の中で過ごすような、<br>穏やかなひととき。</h3>
-                <p class="text-stone-500 leading-relaxed mb-6">
-                    「Forest」は、ただ髪を切るだけの場所ではありません。木々の香りに包まれ、鳥のさえずりが聞こえてくるような、心からリラックスできる場所でありたいと考えています。
-                </p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="flex items-center space-x-2 text-sm font-bold text-stone-600">
-                        <span class="text-botanical">✔</span> 100%オーガニック薬剤
-                    </div>
-                    <div class="flex items-center space-x-2 text-sm font-bold text-stone-600">
-                        <span class="text-botanical">✔</span> 完全プライベート空間
-                    </div>
+                <p class="text-xs tracking-[0.4em] text-gold mb-3">CONCEPT</p>
+                <h2 class="font-mincho text-3xl md:text-4xl text-ink leading-relaxed mb-6">
+                    ママだって、<br>
+                    綺麗で、お洒落で、<br>
+                    可愛くいたい。
+                </h2>
+                <div class="space-y-4 text-ink/75 leading-loose text-[15px]">
+                    <p>
+                        忙しい毎日。<br>
+                        子ども優先で、自分のことを後回しにしているママへ。
+                    </p>
+                    <p>
+                        <span class="font-mincho text-gold">solana</span> は「陽だまり」という意味。<br>
+                        ママとこどもが、気軽に遊びに来られる場所。<br>
+                        日常からふっと離れて、自分を取り戻す時間を。
+                    </p>
+                    <p class="text-rose font-bold border-l-2 border-rose/40 pl-4">
+                        「自分らしく、自然体でいられる」<br>
+                        そんなココロ落ち着く空間を目指しています。
+                    </p>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 gap-3">
+                <div class="aspect-square bg-pink/30 rounded-3xl flex flex-col items-center justify-center p-4 text-center card-soft">
+                    <span class="text-3xl mb-2">🌸</span>
+                    <p class="font-bold text-sm">完全プライベート</p>
+                    <p class="text-xs text-ink/60 mt-1">あなただけの空間</p>
+                </div>
+                <div class="aspect-square bg-beige rounded-3xl flex flex-col items-center justify-center p-4 text-center card-soft mt-8">
+                    <span class="text-3xl mb-2">🫧</span>
+                    <p class="font-bold text-sm">極上の泡体験</p>
+                    <p class="text-xs text-ink/60 mt-1">摩擦ゼロの非日常</p>
+                </div>
+                <div class="aspect-square bg-beige rounded-3xl flex flex-col items-center justify-center p-4 text-center card-soft">
+                    <span class="text-3xl mb-2">👶</span>
+                    <p class="font-bold text-sm">お子様連れOK</p>
+                    <p class="text-xs text-ink/60 mt-1">ママに優しいサロン</p>
+                </div>
+                <div class="aspect-square bg-pink/30 rounded-3xl flex flex-col items-center justify-center p-4 text-center card-soft mt-8">
+                    <span class="text-3xl mb-2">✨</span>
+                    <p class="font-bold text-sm">15年の指先</p>
+                    <p class="text-xs text-ink/60 mt-1">美容師ならではの手技</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Cards -->
-    <section id="menu" class="py-24 bg-stone-100">
+    <!-- Signature Menu : Whip Spa -->
+    <section id="menu" class="py-24 bg-cream">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold rounded-theme">Menu List</h2>
-                <p class="text-stone-400 mt-2">素材にこだわった人気のメニュー</p>
+            <div class="text-center mb-14">
+                <p class="text-xs tracking-[0.4em] text-gold mb-3">SIGNATURE MENU</p>
+                <h2 class="font-mincho text-3xl md:text-4xl text-ink">話題のホイップスパ 🫧</h2>
+                <p class="text-ink/60 text-sm mt-4">毛穴洗浄 × 美肌ケア × 肌再生。solanaの看板メニュー。</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="bg-white p-8 rounded-3xl border-b-8 border-botanical shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-botanical mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M14.121 14.121L19 19m-7-7l7-7m-7 7l-2.879 2.879M12 12L9.121 9.121m0 5.758L5 19m0-14l4.121 4.121"></path></svg>
+
+            <!-- Mouton Whip Spa -->
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-12 card-soft mb-10 relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-48 h-48 bg-pink/20 rounded-full blur-2xl"></div>
+                <div class="relative grid md:grid-cols-3 gap-8 items-start">
+                    <div class="md:col-span-2">
+                        <span class="inline-block bg-pink/20 text-rose text-xs font-bold px-3 py-1 rounded-full mb-4">人気No.1 / 毛穴洗浄</span>
+                        <h3 class="font-mincho text-3xl text-ink mb-3">ムートンホイップスパ</h3>
+                        <p class="text-rose text-sm mb-5">— Mouton Whip Spa —</p>
+                        <p class="text-ink/75 leading-loose mb-6 text-[15px]">
+                            弱アルカリ性の<span class="text-rose font-bold">摩擦レス泡洗顔</span>。<br>
+                            ふわふわもこもこの泡が、汚れの吸着力で<br>
+                            毛穴の奥までしっかりオフ。洗い上がりが全く違います。
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-2 text-xs">
+                            <span class="bg-beige rounded-lg px-3 py-2 text-center font-bold">ヒト型セラミド</span>
+                            <span class="bg-beige rounded-lg px-3 py-2 text-center font-bold">米ぬかエキス</span>
+                            <span class="bg-beige rounded-lg px-3 py-2 text-center font-bold">スクワラン</span>
+                            <span class="bg-beige rounded-lg px-3 py-2 text-center font-bold">コラーゲン</span>
+                        </div>
                     </div>
-                    <h4 class="text-xl font-bold mb-4">Forest カット</h4>
-                    <p class="text-sm text-stone-500 mb-6">お顔立ちと骨格に合わせた似合わせカット。再現性の高いスタイルをご提案。</p>
-                    <div class="flex justify-between items-end">
-                        <span class="text-2xl font-bold text-botanical">¥6,600</span>
-                        <span class="text-xs text-stone-400">60min</span>
+                    <div class="bg-cream rounded-3xl p-6 text-center">
+                        <p class="text-xs text-ink/50 mb-1">所要時間</p>
+                        <p class="font-mincho text-2xl text-ink mb-4">60 min</p>
+                        <p class="text-xs text-ink/50 mb-1">料金</p>
+                        <p class="font-mincho text-3xl text-rose">¥8,800<span class="text-sm text-ink/50">~</span></p>
+                        <p class="text-[10px] text-ink/40 mt-2">フェイシャル＆デコルテ</p>
                     </div>
                 </div>
-                <!-- Card 2 -->
-                <div class="bg-white p-8 rounded-3xl border-b-8 border-botanical shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-botanical mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+            </div>
+
+            <!-- Rich Whip Spa -->
+            <div class="bg-gradient-to-br from-pink/20 to-beige rounded-[2.5rem] p-8 md:p-12 card-soft relative overflow-hidden">
+                <div class="absolute -bottom-10 -left-10 w-48 h-48 bg-white/40 rounded-full blur-2xl"></div>
+                <div class="relative grid md:grid-cols-3 gap-8 items-start">
+                    <div class="md:col-span-2">
+                        <span class="inline-block bg-rose text-white text-xs font-bold px-3 py-1 rounded-full mb-4">PREMIUM / 美容液泡パック</span>
+                        <h3 class="font-mincho text-3xl text-ink mb-3">リッチホイップスパ</h3>
+                        <p class="text-rose text-sm mb-5">— Rich Whip Spa —</p>
+                        <p class="text-ink/75 leading-loose mb-6 text-[15px]">
+                            角質層を緩めた後の、<span class="text-rose font-bold">美容液たっぷりの泡パック</span>。<br>
+                            細胞レベルで肌を蘇らせると話題の <span class="font-bold">エクソソーム</span>を<br>
+                            リポソーム化して、フレッシュな状態で肌の奥へお届け。
+                        </p>
+                        <div class="grid grid-cols-2 md:grid-cols-3 gap-2 text-xs mb-3">
+                            <span class="bg-white rounded-lg px-3 py-2 text-center font-bold">ヒト幹細胞培養液</span>
+                            <span class="bg-white rounded-lg px-3 py-2 text-center font-bold">エクソソーム</span>
+                            <span class="bg-white rounded-lg px-3 py-2 text-center font-bold">5%ナイアシンアミド</span>
+                            <span class="bg-white rounded-lg px-3 py-2 text-center font-bold">ビタミンC誘導体 ×4</span>
+                            <span class="bg-white rounded-lg px-3 py-2 text-center font-bold">ヒアルロン酸 ×2</span>
+                            <span class="bg-white rounded-lg px-3 py-2 text-center font-bold text-rose">透明感・ハリ・ツヤ</span>
+                        </div>
                     </div>
-                    <h4 class="text-xl font-bold mb-4">ハーブカラー</h4>
-                    <p class="text-sm text-stone-500 mb-6">90%以上が天然由来成分。髪と頭皮をいたわりながら、深みのある色合いに。</p>
-                    <div class="flex justify-between items-end">
-                        <span class="text-2xl font-bold text-botanical">¥8,800</span>
-                        <span class="text-xs text-stone-400">90min</span>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="bg-white p-8 rounded-3xl border-b-8 border-botanical shadow-sm hover:shadow-xl transition">
-                    <div class="w-12 h-12 bg-emerald-50 rounded-2xl flex items-center justify-center text-botanical mb-6">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path></svg>
-                    </div>
-                    <h4 class="text-xl font-bold mb-4">アロマヘッドスパ</h4>
-                    <p class="text-sm text-stone-500 mb-6">お好みの精油を選び、ゆっくりと頭皮をほぐします。至福のリラックス体験を。</p>
-                    <div class="flex justify-between items-end">
-                        <span class="text-2xl font-bold text-botanical">¥5,500</span>
-                        <span class="text-xs text-stone-400">45min</span>
+                    <div class="bg-white rounded-3xl p-6 text-center">
+                        <p class="text-xs text-ink/50 mb-1">所要時間</p>
+                        <p class="font-mincho text-2xl text-ink mb-4">90 min</p>
+                        <p class="text-xs text-ink/50 mb-1">料金</p>
+                        <p class="font-mincho text-3xl text-rose">¥14,800<span class="text-sm text-ink/50">~</span></p>
+                        <p class="text-[10px] text-ink/40 mt-2">ムートン+リッチのフルコース</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quick Booking -->
-    <section id="booking" class="py-24">
-        <div class="max-w-2xl mx-auto px-6">
-            <div class="bg-white border-2 border-botanical/20 p-10 rounded-[3rem] shadow-2xl relative">
-                <div class="absolute -top-6 left-1/2 -translate-x-1/2 bg-botanical text-white px-8 py-2 rounded-full font-bold shadow-md">
-                    Reservation
-                </div>
-                <div class="text-center mb-8 pt-4">
-                    <h2 class="text-2xl font-bold rounded-theme">ネット予約</h2>
-                    <p class="text-stone-400 text-sm mt-2">24時間いつでも受け付けております</p>
-                </div>
-
-                <div class="space-y-4">
-                    <button class="w-full bg-stone-50 hover:bg-stone-100 p-4 rounded-2xl flex justify-between items-center transition border border-stone-200 group">
-                        <span class="font-bold">1. メニューを選ぶ</span>
-                        <span class="text-botanical group-hover:translate-x-1 transition">→</span>
-                    </button>
-                    <button class="w-full bg-stone-50 hover:bg-stone-100 p-4 rounded-2xl flex justify-between items-center transition border border-stone-200 group">
-                        <span class="font-bold">2. 日時を選ぶ</span>
-                        <span class="text-botanical group-hover:translate-x-1 transition">→</span>
-                    </button>
-                    
-                    <div class="pt-6">
-                        <button onclick="alert('予約システムへ遷移します')" class="w-full bg-botanical text-white py-5 rounded-2xl font-bold text-xl hover:shadow-lg transition-all active:scale-95">
-                            空き状況を確認
-                        </button>
+    <!-- Other Menus -->
+    <section class="py-20 bg-beige/40">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <p class="text-xs tracking-[0.4em] text-gold mb-3">OTHER MENU</p>
+                <h2 class="font-mincho text-2xl md:text-3xl text-ink">癒やしの手技メニュー</h2>
+                <p class="text-ink/60 text-sm mt-3">15年培ってきた指先の感覚で、絶妙な力加減。</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white rounded-3xl p-7 card-soft">
+                    <div class="text-3xl mb-3">💆‍♀️</div>
+                    <h4 class="font-mincho text-xl mb-2">ドライヘッドスパ</h4>
+                    <p class="text-xs text-ink/60 leading-relaxed mb-4">服を着たまま、頭から首肩までじんわり解きほぐす至福のひととき。</p>
+                    <div class="flex justify-between items-end">
+                        <span class="font-mincho text-xl text-rose">¥5,500</span>
+                        <span class="text-xs text-ink/40">45min</span>
                     </div>
-                    <p class="text-center text-xs text-stone-400 mt-4">
-                        お電話でのご予約も承っております<br>
-                        <span class="text-stone-600 font-bold">03-0000-0000</span>
+                </div>
+                <div class="bg-white rounded-3xl p-7 card-soft">
+                    <div class="text-3xl mb-3">🌿</div>
+                    <h4 class="font-mincho text-xl mb-2">オイルエステ（全身）</h4>
+                    <p class="text-xs text-ink/60 leading-relaxed mb-4">アロマオイルで全身をゆるめる。疲れの溜まった身体にじっくりと。</p>
+                    <div class="flex justify-between items-end">
+                        <span class="font-mincho text-xl text-rose">¥11,000</span>
+                        <span class="text-xs text-ink/40">75min</span>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl p-7 card-soft">
+                    <div class="text-3xl mb-3">✨</div>
+                    <h4 class="font-mincho text-xl mb-2">デコルテ＆肩首ほぐし</h4>
+                    <p class="text-xs text-ink/60 leading-relaxed mb-4">フェイスラインまですっきり。スパとの組み合わせも◎</p>
+                    <div class="flex justify-between items-end">
+                        <span class="font-mincho text-xl text-rose">¥4,400</span>
+                        <span class="text-xs text-ink/40">30min</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Owner -->
+    <section id="about" class="py-24 bg-cream">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <p class="text-xs tracking-[0.4em] text-gold mb-3">OWNER</p>
+                <h2 class="font-mincho text-3xl text-ink">サロンオーナーより</h2>
+            </div>
+            <div class="bg-white rounded-[2rem] p-8 md:p-12 card-soft relative leaf-corner">
+                <div class="absolute top-4 right-6 text-gold text-2xl">❀</div>
+                <div class="absolute bottom-4 left-6 text-gold text-2xl">❀</div>
+                <div class="space-y-5 text-ink/80 leading-loose text-[15px]">
+                    <p>
+                        小さい頃から人の髪を触るのが好きで、<br>
+                        小学3年生のときに「美容師になる」と決めました。
+                    </p>
+                    <p>
+                        スタイリストになってから、たくさんのお客様と出会い、<br>
+                        その中で、ママたちが日々忙しく、自分のことを<br>
+                        後回しにしている姿を見てきました（子ども優先、素敵です）。
+                    </p>
+                    <p>
+                        <span class="text-rose font-bold">「ママとこどもが気軽に遊びに来られる ＝ ママは綺麗になる」</span><br>
+                        そんな陽のあたる場所、ふらっと寄り道できるエステサロンを<br>
+                        つくりたくて、<span class="font-mincho text-gold">solana</span> をOPENしました。
+                    </p>
+                    <p class="text-center pt-4 border-t border-rose/10 text-rose font-bold font-mincho text-lg">
+                        ママだって、綺麗してお洒落して、可愛くいたい。
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-botanical text-white py-16">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h3 class="text-2xl font-bold mb-6 rounded-theme">Forest Hair & Spa</h3>
-                <p class="text-white/80 text-sm leading-relaxed mb-8">
-                    〒150-0000 東京都渋谷区神宮前 0-0-0<br>
-                    JR「原宿駅」徒歩5分 / 地下鉄「明治神宮前駅」徒歩3分
+    <!-- Booking -->
+    <section id="booking" class="py-24 bg-gradient-to-br from-pink/30 to-beige relative overflow-hidden">
+        <div class="absolute top-10 left-10 w-32 h-32 bg-white/40 rounded-full blur-2xl bubble"></div>
+        <div class="absolute bottom-10 right-10 w-40 h-40 bg-pink/40 rounded-full blur-2xl bubble"></div>
+        <div class="max-w-2xl mx-auto px-6 relative">
+            <div class="bg-white rounded-[2.5rem] p-10 md:p-12 card-soft text-center">
+                <div class="inline-block bg-rose text-white text-xs font-bold px-5 py-1.5 rounded-full mb-6 tracking-widest">RESERVATION</div>
+                <h2 class="font-mincho text-3xl text-ink mb-3">ご予約・お問い合わせ</h2>
+                <p class="text-ink/60 text-sm mb-8">
+                    当サロンは<span class="font-bold text-rose">完全予約制</span>です。<br>
+                    Instagram DM または公式LINEからどうぞ。
                 </p>
-                <div class="flex space-x-6">
-                    <a href="#" class="text-white/60 hover:text-white transition">Instagram</a>
-                    <a href="#" class="text-white/60 hover:text-white transition">Facebook</a>
-                    <a href="#" class="text-white/60 hover:text-white transition">Line</a>
+
+                <div class="space-y-3">
+                    <a href="#" class="block w-full bg-gradient-to-r from-[#06C755] to-[#00B900] text-white font-bold py-5 rounded-2xl text-lg hover:opacity-90 transition shadow-lg">
+                        💬 公式LINEで予約する
+                    </a>
+                    <a href="#" class="block w-full bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] text-white font-bold py-5 rounded-2xl text-lg hover:opacity-90 transition shadow-lg">
+                        📷 Instagram DMで予約する
+                    </a>
                 </div>
-            </div>
-            <div class="bg-white/10 p-8 rounded-3xl">
-                <h4 class="font-bold mb-4">営業時間</h4>
-                <div class="flex justify-between text-sm py-2 border-b border-white/10">
-                    <span>月曜 - 金曜</span>
-                    <span>10:00 - 20:00</span>
-                </div>
-                <div class="flex justify-between text-sm py-2 border-b border-white/10">
-                    <span>土日・祝日</span>
-                    <span>09:00 - 19:00</span>
-                </div>
-                <div class="flex justify-between text-sm py-2">
-                    <span>定休日</span>
-                    <span>毎週火曜 / 第3水曜</span>
+
+                <div class="mt-8 pt-6 border-t border-rose/10 text-sm text-ink/60">
+                    <p class="mb-2">🌸 初めての方も、お気軽にメッセージください。</p>
+                    <p class="text-xs text-ink/50">お子様連れのご来店についてもご相談ください。</p>
                 </div>
             </div>
         </div>
-        <div class="text-center pt-16 text-white/40 text-xs">
-            &copy; 2024 Forest Hair & Spa.
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-ink text-white/85 py-14">
+        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+            <div class="md:col-span-2">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="w-10 h-10 rounded-full bg-pink/30 flex items-center justify-center text-pink text-lg">☀</span>
+                    <div>
+                        <div class="font-mincho text-xl text-white">solana</div>
+                        <div class="text-[10px] tracking-[0.3em] text-gold">隠れ家エステサロン</div>
+                    </div>
+                </div>
+                <p class="text-sm leading-relaxed text-white/60 max-w-md">
+                    陽だまりのような、ココロ落ち着く隠れ家エステサロン。<br>
+                    肌も髪もココロも包み込むような、優しい施術を。
+                </p>
+                <div class="flex space-x-5 mt-6 text-sm">
+                    <a href="#" class="text-white/60 hover:text-pink transition">Instagram</a>
+                    <a href="#" class="text-white/60 hover:text-pink transition">LINE</a>
+                </div>
+            </div>
+            <div class="text-sm">
+                <h4 class="font-bold mb-3 text-white">営業時間</h4>
+                <div class="space-y-1 text-white/60">
+                    <div class="flex justify-between"><span>平日</span><span>10:00 - 18:00</span></div>
+                    <div class="flex justify-between"><span>土日</span><span>09:00 - 17:00</span></div>
+                    <div class="flex justify-between"><span>定休日</span><span>不定休</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center pt-10 text-white/30 text-xs">
+            &copy; 2026 solana — 隠れ家エステサロン
         </div>
     </footer>
 
     <script>
-        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
     </script>
