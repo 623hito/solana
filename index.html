@@ -81,6 +81,26 @@
             content: ''; flex: 1; height: 1px;
             background: linear-gradient(90deg, transparent, var(--solana-gold), transparent);
         }
+
+        /* 日本語の改行をフレーズ単位で制御（単語の途中で切れないように） */
+        .jp { display: inline-block; }
+        body {
+            line-break: strict;
+            word-break: normal;
+            overflow-wrap: anywhere;
+        }
+        /* スマホでは過剰な装飾改行を無効化 */
+        @media (max-width: 767px) {
+            .br-pc { display: none; }
+            .hero-title { font-size: 3.5rem; }
+            .hero-sub { font-size: 0.75rem; letter-spacing: 0.2em; }
+            section { padding-top: 3.5rem; padding-bottom: 3.5rem; }
+            .card-soft { box-shadow: 0 12px 24px -16px rgba(232, 132, 151, .25); }
+            /* 角丸を少し控えめに */
+            .rounded-\[2\.5rem\], .rounded-\[2rem\] { border-radius: 1.5rem; }
+            /* 横スクロール防止 */
+            html, body { overflow-x: hidden; }
+        }
     </style>
 </head>
 <body>
@@ -115,20 +135,22 @@
         <div class="absolute bottom-32 left-1/4 w-20 h-20 rounded-full bg-white/50 blur-sm bubble"></div>
         <div class="absolute bottom-20 right-1/3 w-12 h-12 rounded-full bg-pink/40 blur-sm bubble"></div>
 
-        <div class="relative max-w-5xl mx-auto px-6 py-24 md:py-32 text-center">
-            <p class="text-xs tracking-[0.4em] text-gold mb-6">— 隠れ家エステサロン —</p>
-            <h1 class="font-mincho text-5xl md:text-7xl text-ink mb-4">solana</h1>
-            <p class="text-rose tracking-widest text-sm mb-10">陽 だ ま り の よ う な、私 だ け の 時 間</p>
-            <p class="text-ink/70 leading-loose max-w-xl mx-auto mb-10">
-                <span class="text-rose font-bold">1日2名様限定</span>の、贅沢な隠れ家エステサロン。<br class="hidden md:block">
-                陽のあたる私へ、笑顔生まれる空間。<br class="hidden md:block">
-                話題の<span class="text-rose font-bold">ムートンホイップスパ</span>で、毛穴の奥から透明感とハリのある肌へ。
+        <div class="relative max-w-5xl mx-auto px-6 py-20 md:py-32 text-center">
+            <p class="hero-sub text-xs tracking-[0.4em] text-gold mb-5">— 隠れ家エステサロン —</p>
+            <h1 class="hero-title font-mincho text-6xl md:text-7xl text-ink mb-4">solana</h1>
+            <p class="text-rose tracking-widest text-xs md:text-sm mb-8">
+                <span class="jp">陽だまりのような、</span><span class="jp">私だけの時間</span>
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#booking" class="btn-primary text-white font-bold px-10 py-4 rounded-full transition inline-block">
+            <p class="text-ink/75 leading-loose max-w-xl mx-auto mb-10 text-[15px] md:text-base">
+                <span class="jp"><span class="text-rose font-bold">1日2名様限定</span>の、</span><span class="jp">贅沢な隠れ家エステサロン。</span><br class="br-pc">
+                <span class="jp">陽のあたる私へ、</span><span class="jp">笑顔生まれる空間。</span><br class="br-pc">
+                <span class="jp">話題の<span class="text-rose font-bold">ムートンホイップスパ</span>で、</span><span class="jp">毛穴の奥から</span><span class="jp">透明感とハリのある肌へ。</span>
+            </p>
+            <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
+                <a href="#booking" class="btn-primary text-white font-bold px-8 py-4 rounded-full transition inline-block flex-1">
                     🌸 ご予約・お問い合わせ
                 </a>
-                <a href="#menu" class="bg-white/80 text-ink font-bold px-10 py-4 rounded-full border border-rose/30 hover:bg-white transition inline-block">
+                <a href="#menu" class="bg-white/80 text-ink font-bold px-8 py-4 rounded-full border border-rose/30 hover:bg-white transition inline-block flex-1">
                     メニューを見る
                 </a>
             </div>
@@ -151,11 +173,9 @@
                     <p class="text-rose font-bold">「毛穴汚れを落として、透明感とハリを取り戻したい」</p>
                 </div>
             </div>
-            <p class="mt-10 text-ink/70 leading-loose">
-                それは、古い角質や毛穴の汚れが<br>
-                肌の表面に溜まっているからかもしれません。<br>
-                <span class="text-rose font-bold">solanaの極上の泡</span>が、
-                あなたの素肌を呼び覚まします。✨
+            <p class="mt-10 text-ink/70 leading-loose text-[15px]">
+                <span class="jp">それは、</span><span class="jp">古い角質や毛穴の汚れが</span><span class="jp">肌の表面に溜まっているから</span><span class="jp">かもしれません。</span><br class="br-pc">
+                <span class="jp"><span class="text-rose font-bold">solanaの極上の泡</span>が、</span><span class="jp">あなたの素肌を呼び覚まします。✨</span>
             </p>
         </div>
     </section>
@@ -172,20 +192,20 @@
                 </h2>
                 <div class="space-y-4 text-ink/75 leading-loose text-[15px]">
                     <p>
-                        忙しい毎日。<br>
-                        子ども優先で、自分のことを後回しにしているママへ。
+                        <span class="jp">忙しい毎日。</span><br class="br-pc">
+                        <span class="jp">子ども優先で、</span><span class="jp">自分のことを後回しにしている</span><span class="jp">ママへ。</span>
                     </p>
                     <p>
-                        <span class="font-mincho text-gold">solana</span> は「陽だまり」という意味。<br>
-                        ママとこどもが、気軽に遊びに来られる場所。<br>
-                        日常からふっと離れて、自分を取り戻す時間を。
+                        <span class="jp"><span class="font-mincho text-gold">solana</span> は</span><span class="jp">「陽だまり」という意味。</span><br class="br-pc">
+                        <span class="jp">ママとこどもが、</span><span class="jp">気軽に遊びに来られる場所。</span><br class="br-pc">
+                        <span class="jp">日常からふっと離れて、</span><span class="jp">自分を取り戻す時間を。</span>
                     </p>
                     <p class="text-rose font-bold border-l-2 border-rose/40 pl-4">
-                        ママの笑顔と美しさ ＝ 未来へ。<br>
-                        絆深まる温かいサロンづくりを心がけています。
+                        <span class="jp">ママの笑顔と美しさ ＝ 未来へ。</span><br class="br-pc">
+                        <span class="jp">絆深まる</span><span class="jp">温かいサロンづくりを</span><span class="jp">心がけています。</span>
                     </p>
                     <p class="text-xs text-ink/60 bg-beige/60 rounded-xl p-3 mt-3 leading-relaxed">
-                        ※ 自宅サロンにて営業しております。お子様連れご希望の場合は、ご予約時にご相談ください。
+                        <span class="jp">※ 自宅サロンにて営業しております。</span><span class="jp">お子様連れご希望の場合は、</span><span class="jp">ご予約時にご相談ください。</span>
                     </p>
                 </div>
             </div>
@@ -195,7 +215,7 @@
                     <p class="font-bold text-sm">完全プライベート</p>
                     <p class="text-xs text-ink/60 mt-1">あなただけの空間</p>
                 </div>
-                <div class="aspect-square bg-beige rounded-3xl flex flex-col items-center justify-center p-4 text-center card-soft mt-8">
+                <div class="aspect-square bg-beige rounded-3xl flex flex-col items-center justify-center p-4 text-center card-soft md:mt-8">
                     <span class="text-3xl mb-2">🫧</span>
                     <p class="font-bold text-sm">極上の泡体験</p>
                     <p class="text-xs text-ink/60 mt-1">摩擦ゼロの非日常</p>
@@ -205,7 +225,7 @@
                     <p class="font-bold text-sm">子連れご相談OK</p>
                     <p class="text-xs text-ink/60 mt-1">自宅サロンのため要相談</p>
                 </div>
-                <div class="aspect-square bg-pink/30 rounded-3xl flex flex-col items-center justify-center p-4 text-center card-soft mt-8">
+                <div class="aspect-square bg-pink/30 rounded-3xl flex flex-col items-center justify-center p-4 text-center card-soft md:mt-8">
                     <span class="text-3xl mb-2">✨</span>
                     <p class="font-bold text-sm">15年の指先</p>
                     <p class="text-xs text-ink/60 mt-1">美容師ならではの手技</p>
@@ -250,14 +270,16 @@
 
                     <div class="bg-beige/60 rounded-2xl p-5 text-[14px] text-ink/80 leading-loose mb-5">
                         <p class="font-bold text-rose mb-2">唯一無二の摩擦ゼロ生泡</p>
-                        <p>シミ・シワ改善　肌ワントーンアップ<br>
-                        美容成分たっぷりのピンク泡で贅沢ケア<br>
-                        赤ちゃん肌のようなふっくら肌へ</p>
+                        <p>
+                            <span class="jp">シミ・シワ改善</span>　<span class="jp">肌ワントーンアップ</span><br class="br-pc">
+                            <span class="jp">美容成分たっぷりのピンク泡で</span><span class="jp">贅沢ケア</span><br class="br-pc">
+                            <span class="jp">赤ちゃん肌のような</span><span class="jp">ふっくら肌へ</span>
+                        </p>
                     </div>
                     <p class="text-[13px] text-ink/70 leading-loose">
-                        もこもこの泡に包まれて毛穴の奥まで優しく洗浄。<br>
-                        仕上がりのお肌はモチモチ透明感。<br>
-                        <span class="font-bold">《非日常の心地よさ》</span>で心まで真っ白にリセットされるような体験をお届けします。
+                        <span class="jp">もこもこの泡に包まれて</span><span class="jp">毛穴の奥まで優しく洗浄。</span><br class="br-pc">
+                        <span class="jp">仕上がりのお肌は</span><span class="jp">モチモチ透明感。</span><br class="br-pc">
+                        <span class="jp"><span class="font-bold">《非日常の心地よさ》</span>で</span><span class="jp">心まで真っ白にリセットされるような</span><span class="jp">体験をお届けします。</span>
                     </p>
                 </div>
             </div>
@@ -274,10 +296,10 @@
                         <span class="font-mincho text-xl text-rose">5,500<span class="text-xs text-ink/60">円(税込)</span></span>
                     </div>
                     <p class="text-[14px] text-ink/75 leading-loose">
-                        美容師が贈る 極上ヘッドスパ<br>
-                        脳疲労　眼精疲労　自律神経の乱れを改善<br>
-                        睡眠の質向上　リフトアップ効果<br>
-                        <span class="text-rose font-bold">脳から癒されるひととき</span>
+                        <span class="jp">美容師が贈る</span> <span class="jp">極上ヘッドスパ</span><br class="br-pc">
+                        <span class="jp">脳疲労</span>　<span class="jp">眼精疲労</span>　<span class="jp">自律神経の乱れを改善</span><br class="br-pc">
+                        <span class="jp">睡眠の質向上</span>　<span class="jp">リフトアップ効果</span><br class="br-pc">
+                        <span class="jp text-rose font-bold">脳から癒されるひととき</span>
                     </p>
                 </div>
             </div>
@@ -302,9 +324,9 @@
                         </div>
                     </div>
                     <p class="text-[14px] text-ink/75 leading-loose">
-                        極楽　全身リフレッシュ（服のままできます）<br>
-                        マッサージ好きがするちょうどいい指圧で<br>
-                        <span class="text-rose font-bold">病みつきになる感動スッキリ！</span>
+                        <span class="jp">極楽　全身リフレッシュ</span><span class="jp">（服のままできます）</span><br class="br-pc">
+                        <span class="jp">マッサージ好きがする</span><span class="jp">ちょうどいい指圧で</span><br class="br-pc">
+                        <span class="jp text-rose font-bold">病みつきになる感動スッキリ！</span>
                     </p>
                 </div>
             </div>
@@ -343,21 +365,19 @@
                 <div class="absolute bottom-4 left-6 text-gold text-2xl">❀</div>
                 <div class="space-y-5 text-ink/80 leading-loose text-[15px]">
                     <p>
-                        小さい頃から人の髪を触るのが好きで、<br>
-                        小学3年生のときに「美容師になる」と決めました。
+                        <span class="jp">小さい頃から</span><span class="jp">人の髪を触るのが好きで、</span><br class="br-pc">
+                        <span class="jp">小学3年生のときに</span><span class="jp">「美容師になる」と決めました。</span>
                     </p>
                     <p>
-                        スタイリストになってから、たくさんのお客様と出会い、<br>
-                        その中で、ママたちが日々忙しく、自分のことを<br>
-                        後回しにしている姿を見てきました（子ども優先、素敵です）。
+                        <span class="jp">スタイリストになってから、</span><span class="jp">たくさんのお客様と出会い、</span><br class="br-pc">
+                        <span class="jp">その中で、</span><span class="jp">ママたちが日々忙しく、</span><span class="jp">自分のことを後回しにしている姿を</span><span class="jp">見てきました</span><span class="jp">（子ども優先、素敵です）。</span>
                     </p>
                     <p>
-                        <span class="text-rose font-bold">「ママとこどもが気軽に遊びに来られる ＝ ママは綺麗になる」</span><br>
-                        そんな陽のあたる場所、ふらっと寄り道できるエステサロンを<br>
-                        つくりたくて、<span class="font-mincho text-gold">solana</span> をOPENしました。
+                        <span class="jp text-rose font-bold">「ママとこどもが</span><span class="jp text-rose font-bold">気軽に遊びに来られる</span><span class="jp text-rose font-bold">＝ ママは綺麗になる」</span><br class="br-pc">
+                        <span class="jp">そんな陽のあたる場所、</span><span class="jp">ふらっと寄り道できる</span><span class="jp">エステサロンをつくりたくて、</span><span class="jp"><span class="font-mincho text-gold">solana</span> をOPENしました。</span>
                     </p>
                     <p class="text-center pt-4 border-t border-rose/10 text-rose font-bold font-mincho text-lg">
-                        ママだって、綺麗してお洒落して、可愛くいたい。
+                        <span class="jp">ママだって、</span><span class="jp">綺麗してお洒落して、</span><span class="jp">可愛くいたい。</span>
                     </p>
                 </div>
             </div>
@@ -380,8 +400,8 @@
                     </div>
                     <p class="text-2xl font-mincho text-ink mb-2">三重県 いなべ市</p>
                     <p class="text-sm text-ink/60 leading-relaxed">
-                        詳細な住所は、ご予約確定後にお伝えいたします。<br>
-                        <span class="text-xs text-ink/50">※ 自宅サロンのため、プライバシー保護の観点からご了承ください</span>
+                        <span class="jp">詳細な住所は、</span><span class="jp">ご予約確定後にお伝えいたします。</span><br class="br-pc">
+                        <span class="text-xs text-ink/50"><span class="jp">※ 自宅サロンのため、</span><span class="jp">プライバシー保護の観点から</span><span class="jp">ご了承ください</span></span>
                     </p>
                 </div>
                 <!-- Payment -->
@@ -415,8 +435,8 @@
                 <div class="inline-block bg-rose text-white text-xs font-bold px-5 py-1.5 rounded-full mb-6 tracking-widest">RESERVATION</div>
                 <h2 class="font-mincho text-3xl text-ink mb-3">ご予約・お問い合わせ</h2>
                 <p class="text-ink/60 text-sm mb-8">
-                    当サロンは<span class="font-bold text-rose">完全予約制</span>です。<br>
-                    Instagram DM または公式LINEからどうぞ。
+                    <span class="jp">当サロンは</span><span class="jp"><span class="font-bold text-rose">完全予約制</span>です。</span><br class="br-pc">
+                    <span class="jp">Instagram DM または</span><span class="jp">公式LINEからどうぞ。</span>
                 </p>
 
                 <div class="space-y-3">
